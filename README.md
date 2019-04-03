@@ -1,7 +1,6 @@
 # Numpy2c
 
-Simple demo to show how to pass Python variables such as numpy arrays to a C/C++ function and get their result back.
-
+Simple demo to pass Python variables such as Numpy arrays to a C/C++ function and get the result back.
 
 
 1. Compile C/C++ library as a shared library
