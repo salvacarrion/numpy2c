@@ -12,10 +12,10 @@ Simple demo to pass Python variables such as Numpy arrays to a C/C++ function an
     ````
     
     1.2 Check for name mangling: 
-    You should see you function like this "_array_sum", and not mangled ( "__Z9array_sumPiS_i")
+    You should see your function's name clearly, like "_func_name", and not mangled (e.g.: "__Z9func_namePiS_i")
     
     ```
-    nm utils.so | grep (your_func)
+    nm utils.so | grep (func_name)
     ```
     
     If you have this problem, simply add `extern "C"` to your function declaration.
