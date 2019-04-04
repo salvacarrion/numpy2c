@@ -54,7 +54,7 @@ def c_add_vectors(a, b):
     # func.restype = np.ctypeslib.ndpointer(dtype=ctypes.c_float, ndim=a.ndim, shape=(len(a),), flags='C_CONTIGUOUS')
     # c = func(a, b, len(a))  # returns a pointer
 
-    return c
+    return cc
 
 
 def main():
