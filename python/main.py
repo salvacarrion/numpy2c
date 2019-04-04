@@ -51,8 +51,8 @@ def c_add_vectors(a, b):
     cc = np.array(np.fromiter(c, dtype=np.float32, count=len(a)))
 
     # [OUTPUT] Option 2: (cast directly into Numpy) -not working-
-    # func.restype = np.ctypeslib.ndpointer(dtype=ctypes.c_float, ndim=a.ndim, shape=(len(a),), flags='C_CONTIGUOUS')
-    # c = func(a, b, len(a))  # returns a pointer
+    # func.restype = np.ctypeslib.ndpointer(dtype=ctypes.POINTER(ctypes.c_float), ndim=a.ndim, flags='C_CONTIGUOUS')
+    # cc = func(a, b, len(a))  # returns a pointer
 
     return cc
 
@@ -75,7 +75,6 @@ def main():
     print("Array w: {}".format(arr_w))
     print("Array M:")
     print(arr_m)
-    print("")
     print("")
 
     print("Tests: *******************************")
