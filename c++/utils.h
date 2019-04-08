@@ -10,7 +10,9 @@ extern "C"
 
 int dummy_sum(int a, int b);
 float array_sum(float arr[], int dim[], int size_dim);
-int fast_sum(std::vector<int> arr, int size);
+float array_sum_p(float *arr, int *dim, int size_dim);
+int fast_sum(float *arr, int size);
+float* sum_vector_bw(float *a, float *b, int size);
 
 #ifdef __cplusplus
 }

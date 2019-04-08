@@ -4,7 +4,7 @@
 
 #include "utils.h"
 
-//#include <iostream>
+#include <iostream>
 //#include <string>
 
 int dummy_sum(int a, int b){
@@ -14,34 +14,50 @@ int dummy_sum(int a, int b){
 float array_sum(float arr[], int dim[], int size_dim){
     float s = 0;
     int arr_size=1;
-//    std::cout << "Size dim: " << size_dim << std::endl;
 
-//    std::string str_dim = "{";
+    // Get dimension
     for(int i = 0; i < size_dim; ++i){
-//        str_dim += std::to_string(dim[i]);
         arr_size *= dim[i];
-//        if (i+1 == size_dim) { str_dim += "}";}
-//        else {str_dim += ", "; }
     }
-    //std::cout << "Dim: " << str_dim << std::endl;
 
 
-//    std::string str_arr = "{";
+    // Sum array
     for(int i = 0; i < arr_size; ++i){
         s += arr[i];
-//        str_arr += std::to_string(arr[i]);
-//        if (i+1 == arr_size) { str_arr += "}";}
-//        else {str_arr += ", "; }
     }
-//    std::cout << "Arr: " << str_arr << std::endl;
 
     return s;
 }
 
-int fast_sum(const std::vector<int> arr, int size){
+float array_sum_p(float *arr, int *dim, int size_dim){
+    float s = 0;
+    int arr_size=1;
+
+    // Get dimension
+    for(int i = 0; i < size_dim; ++i){
+        arr_size *= dim[i];
+    }
+
+    // Sum array
+    for(int i = 0; i < arr_size; ++i){
+        s += arr[i];
+    }
+
+    return s;
+}
+
+int fast_sum(float *arr, int size){
     int s = 0;
-    for (int i : arr) {
+    for(int i = 0; i < size; ++i){
         s += i;
     }
     return s;
+}
+
+float* sum_vector_bw(float *a, float *b, int size){
+    float* c = new float[size];
+    for (int i = 0; i < size; ++i){
+        c[i] = a[i] + b[i];
+    }
+    return c;
 }
